@@ -41,3 +41,7 @@ channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
 
+[spoolman]
+server = http://192.168.0.185:7912
+sync_rate = 5
+
