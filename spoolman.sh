@@ -17,7 +17,7 @@ push_config(){
   git pull origin $branch --no-rebase
   git add .
   current_date=$(date +"%Y-%m-%d %T")
-  git commit -m "Autocommit from $current_date" -m "$m1"
+  git commit -m "Backup Spoolman $current_date" -m "$m1"
   git push origin $branch
 }
 
