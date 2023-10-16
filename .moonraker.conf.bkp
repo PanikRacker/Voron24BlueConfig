@@ -41,6 +41,14 @@ channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
 
+[update_manager sonar]
+type = git_repo
+path = ~/sonar
+origin = https://github.com/mainsail-crew/sonar.git
+primary_branch = main
+managed_services = sonar
+install_script = tools/install.sh
+
 [spoolman]
 server = http://192.168.0.185:7912
 sync_rate = 5
@@ -59,12 +67,4 @@ requirements = requirements.txt
 install_script = install.sh
 managed_services = 
 	moonraker-obico
-
-[update_manager sonar]
-type = git_repo
-path = ~/sonar
-origin = https://github.com/mainsail-crew/sonar.git
-primary_branch = main
-managed_services = sonar
-install_script = tools/install.sh
 
