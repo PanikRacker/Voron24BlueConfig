@@ -6,3 +6,4 @@ Spoolman/data/spoolman.log.*
 moonraker-obico.cfg
 moonraker-obico-update.cfg
 telegram.conf
+secrets.conf
