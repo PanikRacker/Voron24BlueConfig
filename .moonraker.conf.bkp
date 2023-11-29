@@ -96,3 +96,7 @@ env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
 
+[power daylight]
+type = klipper_device
+object_name = output_pin daylight
+
