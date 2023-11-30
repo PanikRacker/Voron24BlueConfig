@@ -58,16 +58,6 @@ type = tasmota
 address = 192.168.0.52
 locked_while_printing = True
 
-[update_manager moonraker-obico]
-type = git_repo
-path = ~/moonraker-obico
-origin = https://github.com/TheSpaghettiDetective/moonraker-obico.git
-env = /home/voron24blue/moonraker-obico-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-managed_services = 
-	moonraker-obico
-
 [file_manager]
 enable_object_processing = True
 
@@ -78,16 +68,6 @@ origin = https://github.com/mainsail-crew/crowsnest.git
 managed_services = crowsnest
 install_script = tools/pkglist.sh
 
-[update_manager mobileraker]
-type = git_repo
-path = /home/voron24blue/mobileraker_companion
-origin = https://github.com/Clon1998/mobileraker_companion.git
-primary_branch = main
-managed_services = mobileraker
-env = /home/voron24blue/mobileraker-env/bin/python
-requirements = scripts/mobileraker-requirements.txt
-install_script = scripts/install-mobileraker-companion.sh
-
 [update_manager moonraker-telegram-bot]
 type = git_repo
 path = ~/moonraker-telegram-bot
@@ -95,8 +75,4 @@ origin = https://github.com/nlef/moonraker-telegram-bot.git
 env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
-
-[power daylight]
-type = klipper_device
-object_name = output_pin daylight
 
