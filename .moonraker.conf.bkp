@@ -76,3 +76,9 @@ env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
 
+[update_manager z_calibration]
+type = git_repo
+path = /home/voron24blue/klipper_z_calibration
+origin = https://github.com/protoloft/klipper_z_calibration.git
+managed_services = klipper
+
