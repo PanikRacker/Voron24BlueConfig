@@ -20,8 +20,6 @@ cors_domains =
 	*://my.mainsail.xyz
 	*://app.fluidd.xyz
 
-[octoprint_compat]
-
 [history]
 
 [update_manager]
@@ -40,18 +38,6 @@ type = web
 channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
-
-[spoolman]
-server = http://192.168.0.164:7912
-sync_rate = 5
-
-[power tasmota_plug]
-type = tasmota
-address = 192.168.0.52
-locked_while_printing = True
-
-[file_manager]
-enable_object_processing = True
 
 [update_manager crowsnest]
 type = git_repo
@@ -73,4 +59,16 @@ type = git_repo
 path = /home/voron24blue/klipper_z_calibration
 origin = https://github.com/protoloft/klipper_z_calibration.git
 managed_services = klipper
+
+[spoolman]
+server = http://192.168.0.164:7912
+sync_rate = 5
+
+[power tasmota_plug]
+type = tasmota
+address = 192.168.0.52
+locked_while_printing = True
+
+[file_manager]
+enable_object_processing = True
 
