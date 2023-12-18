@@ -41,16 +41,8 @@ channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
 
-[update_manager sonar]
-type = git_repo
-path = ~/sonar
-origin = https://github.com/mainsail-crew/sonar.git
-primary_branch = main
-managed_services = sonar
-install_script = tools/install.sh
-
 [spoolman]
-server = http://192.168.0.185:7912
+server = http://192.168.0.164:7912
 sync_rate = 5
 
 [power tasmota_plug]
