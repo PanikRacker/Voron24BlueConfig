@@ -3,6 +3,4 @@ adxl_results/belts/*.csv
 adxl_results/vibrations/*.tar.gz
 Spoolman/data/spoolman.log
 Spoolman/data/spoolman.log.*
-moonraker-obico.cfg
-moonraker-obico-update.cfg
 secrets.conf
