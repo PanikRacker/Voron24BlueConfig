@@ -1,5 +1,4 @@
 adxl_results/belts/*.csv
 adxl_results/vibrations/*.tar.gz
-Spoolman/data
-Spoolman/data/**
+Spoolman/data/
 secrets.conf
