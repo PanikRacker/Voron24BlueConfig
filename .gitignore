@@ -1,6 +1,4 @@
-saved_variables.cfg
 adxl_results/belts/*.csv
 adxl_results/vibrations/*.tar.gz
-Spoolman/data/spoolman.log
-Spoolman/data/spoolman.log.*
+Spoolman/data/**
 secrets.conf
