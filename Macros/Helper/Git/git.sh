@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git $1
+cd ~/printer_data/config && git $1
