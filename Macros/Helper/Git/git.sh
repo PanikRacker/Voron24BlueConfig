@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git $cmd
+git $1
