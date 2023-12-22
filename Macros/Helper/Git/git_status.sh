@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git status
+cd ~/printer_data/config && git status

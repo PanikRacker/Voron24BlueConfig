@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git pull
+cd ~/printer_data/config && git pull
