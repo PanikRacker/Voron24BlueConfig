@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rm -rf ~/moonraker-telegram-bot-timelapse/*
+cd ~/moonraker-telegram-bot-timelapse/ && rm -rf *
