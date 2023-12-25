@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cd ~/moonraker-telegram-bot-timelapse && rm -rf *.webp
+cd ~/moonraker-telegram-bot-timelapse && rm -rf */*.webp
