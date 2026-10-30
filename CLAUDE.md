@@ -70,7 +70,7 @@ Klipper extension installed on the printer):
 | Script | Driver macro |
 |---|---|
 | `Backup/autocommit.sh` | `CONFIG_BACKUP` — auto-commits+pushes config, skipped while printing |
-| `Macros/Helper/Git/*.sh` | `GIT CMD=...`, `_GIT_PULL`, `_GIT_STATUS`, `_GIT_RESET_HEAD` |
+| `Macros/Helper/Git/*.sh` | `GIT CMD=...`, `_GIT_PULL`, `_GIT_STATUS`, `_GIT_RESET_HEAD`, `_GIT_RESET_REMOTE` |
 | `Webcam/timelapse_cleanup_*.sh` | `_TIMELAPSE_CLEANUP_*` |
 | `Macros/Helper/*/variables_*.sh` | `VARIABLES_DISPLAY`, `VARIABLES_RESET` |
 
@@ -83,8 +83,10 @@ breaks `#!/bin/bash`); and `timeout:` must exceed the script's real runtime.
 The printer pulls this repo — there is no push-to-printer step from Windows:
 
 1. Commit and push here.
-2. On the printer run `CONFIG_UPDATE CONFIRM=true` (add `FORCE=true` to hard-reset local
-   changes first). It runs `_GIT_PULL` then `FIRMWARE_RESTART` after 5s.
+2. On the printer run `CONFIG_UPDATE CONFIRM=true`. It runs `_GIT_PULL`
+   (`git pull --ff-only`) then `FIRMWARE_RESTART` after 5s. `FORCE=true` instead runs
+   `_GIT_RESET_REMOTE` (`git fetch` + `git reset --hard origin/main`), which discards
+   printer-side commits and is the only path that survives a rewritten history.
 3. `CONFIG_BACKUP` runs the reverse direction — commits changes made through Mainsail.
 
 Because of that, expect the printer's working tree to have its own commits; pull before

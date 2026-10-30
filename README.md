@@ -202,7 +202,7 @@ internal and should not be called from a slicer or the console.
 | `SET_LOG_MODE MODE=0..3`                    | 0 none / 1 all / 2 debug / 3 verbose            |
 | `SEARCH TERM=<string>`                      | grep the live `printer` object tree             |
 | `VARIABLES_DISPLAY` / `VARIABLES_RESET`     | inspect / clear persistent variables            |
-| `CONFIG_UPDATE CONFIRM=true [FORCE=true]`   | pull this repo on the printer, then restart      |
+| `CONFIG_UPDATE CONFIRM=true [FORCE=true]`   | fast-forward this repo on the printer, then restart |
 | `CONFIG_BACKUP`                             | commit + push printer-side changes               |
 | `GIT CMD=<...>`                             | raw git access from the console                  |
 | `TIMELAPSE_*`                               | timelapse control and retention cleanup          |
@@ -241,8 +241,11 @@ Then, on the printer's console:
 CONFIG_UPDATE CONFIRM=true
 ```
 
-That runs `_GIT_PULL` and firmware-restarts after 5 seconds. Add `FORCE=true` to hard-reset
-local changes first. Changes made through Mainsail travel the other way with
+That runs `_GIT_PULL` (`git pull --ff-only`) and firmware-restarts after 5 seconds. A pull
+that is not a fast-forward fails loudly rather than creating a merge commit; `FORCE=true`
+is the escape hatch, running `git fetch` + `git reset --hard origin/main`, which discards
+printer-side commits and is what recovers a diverged or rewritten history.
+Changes made through Mainsail travel the other way with
 `CONFIG_BACKUP`, which commits and pushes them here — so expect the printer to have its own
 commits, and pull before editing.
 
